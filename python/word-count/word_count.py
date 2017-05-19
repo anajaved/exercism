@@ -1,4 +1,3 @@
-import collections
 
 def word_count(sentence):
 	'''
