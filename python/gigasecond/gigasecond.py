@@ -7,7 +7,7 @@ def add_gigasecond(birthday):
 	Output: date when a person has lived for 10^9 seconds (gigasecond)
     '''
 
-    birthday += timedelta(seconds=1000000000)
+    birthday += timedelta(seconds=1e9)
     return birthday
 
 add_gigasecond(datetime(2011, 4, 25))
