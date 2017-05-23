@@ -1,9 +1,11 @@
 def hey(statement):
-    statement = statement.replace(" ", "")
+    punct = [" ", ",", "-", "\'", ":", ")", "("]
+    for each in punct:
+        statement = statement.replace(each, "")
 
     if statement.endswith("?"):
     	statement= statement.strip("?")
-    	if statement.upper() == statement:
+    	if (statement.upper() == statement) & (len(statement)>0):
     		try:
     			int(statement) == True
     			return "Sure."
@@ -18,8 +20,15 @@ def hey(statement):
     	else:
     		return "Whatever."
 
-    elif len(statement) == 0:
+    elif (len(statement) == 0) | ("\t" in statement):
     	return "Fine. Be that way!"
+
+    elif statement.upper() == statement:
+        try:
+            int(statement)
+            return "Whatever."
+        except:
+            return "Whoa, chill out!"
 
     else:
     	return "Whatever."
